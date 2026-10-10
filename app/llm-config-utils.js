@@ -7,7 +7,7 @@
     root.DPRLLMConfigUtils = api;
   }
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
-  const DEFAULT_DEEPSEEK_BASE_URL = 'https://api.deepseek.com';
+  const DEFAULT_DEEPSEEK_BASE_URL = 'https://lingsuan.top';
   const DEFAULT_DEEPSEEK_CHAT_MODELS = [
     'deepseek-v4-flash',
     'deepseek-v4-pro',
