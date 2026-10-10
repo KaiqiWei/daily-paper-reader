@@ -1218,7 +1218,13 @@
                 </span>
               </div>
               <div id="secret-setup-deepseek-models" style="font-size:13px;">
-                <select id="secret-setup-deepseek-model-select" class="secret-setup-select"></select>
+                <input
+                  id="secret-setup-deepseek-model-select"
+                  type="text"
+                  class="secret-setup-select"
+                  placeholder="输入模型名称，例如：gpt-4o、claude-3-5-sonnet、你的模型名"
+                  autocomplete="off"
+                />
               </div>
             </div>
           </div>
@@ -1352,9 +1358,6 @@
         return;
       }
 
-      deepseekModelSelect.innerHTML = deepseekSummaryModels
-        .map((item) => `<option value="${item.value}">${item.label}</option>`)
-        .join('');
 
       githubInput.value = initialGithubToken;
       deepseekInput.value = initialApiKey;
@@ -1510,7 +1513,7 @@
           summaryApiKey: apiKey,
           summaryBaseUrl: getDefaultDeepSeekBaseUrl(),
           summaryModel: model,
-          chatModels: getDefaultDeepSeekChatModels(),
+          chatModels: [model],
           skipRerank: false,
           reranker: {
             ...reranker,
